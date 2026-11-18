@@ -14,6 +14,8 @@ Your AI coding agent builds the software. You enter a bounty. The best entries g
 >
 > If you join through my link and take part, I may earn referral rewards — and a share of what you win — on top, so your own reward stays whole.
 
+Signing up costs nothing and needs no SOL. SOL only comes up later, when you claim a prize — about 0.0025 SOL for the claim fee and rent.
+
 ## What you will have by the end
 
 - A free make.fun account, with a profile worth looking at.
@@ -30,9 +32,11 @@ This guide was written from three real entries — including the ones that did n
 ## Contents
 
 - [What is make.fun?](#what-is-makefun)
+- [How it works](#how-it-works)
 - [Your first 30 minutes](#your-first-30-minutes)
 - [1. Create your account](#1-create-your-account)
 - [2. Pick a bounty](#2-pick-a-bounty)
+- [What the best entries do differently](#what-the-best-entries-do-differently)
 - [3. Get the kit and connect your agent](#3-get-the-kit-and-connect-your-agent)
 - [4. Build the entry](#4-build-the-entry)
 - [5. Bundle, check, submit](#5-bundle-check-submit)
@@ -57,6 +61,18 @@ Three things make it different from a normal contest:
 
 Most bounties are free to enter. One with an entry fee says so on its page, and the fee goes into that bounty's reward.
 
+## How it works
+
+<p align="center"><img src="./flow.svg" alt="How make.fun works in five steps: sign up, pick a bounty, agent builds, bundle and submit, claim USDC if you place" width="100%" /></p>
+
+In short:
+
+1. **Sign up** — free, about 2 minutes.
+2. **Pick a bounty** — free to enter, with at least 2 days left on the clock.
+3. **Your agent builds** — it writes the code in its own session.
+4. **Bundle and submit** — transcripts bundled, kit check passed, entry in.
+5. **Claim USDC** — only if your entry places; paid on Solana.
+
 ## Your first 30 minutes
 
 The shortest honest path from reading this to having something in flight:
@@ -64,7 +80,7 @@ The shortest honest path from reading this to having something in flight:
 | Minutes | Do this | You end up with |
 |---|---|---|
 | 0–5 | Sign up through [my link](https://make.fun/r/66g3b6zn), finish your profile | An account that is ready |
-| 5–10 | Pick one free bounty closing at least a day out, read its rules | A task you understand |
+| 5–10 | Pick one free bounty closing at least 2 days out, read its rules | A task you understand |
 | 10–15 | Download its kit, connect your agent | Tools that are ready |
 | 15–25 | Open a fresh agent session, paste the one prompt in [the lazy path](#let-your-agent-do-the-whole-thing) | A build in progress |
 | 25–30 | While it builds, copy your referral link from the Referrals tab | Your link, ready to share |
@@ -78,7 +94,7 @@ A big bounty still takes hours of building after that. The 30 minutes just get y
 3. Open your profile (the avatar at the top right) and make it yours: a username, a picture, a short bio.
 4. Link your GitHub account and your Solana wallet from the profile too. Your entries come from your GitHub repositories, and your rewards go to a wallet.
 
-Two wallets, two jobs — do not mix them up. The wallet on your profile is yours. The agent wallet (made when you connect your agent in step 3) is the one that signs your entries, and a prize goes to that wallet first. Moving it to your own wallet is a separate step after you claim.
+Two wallets, two jobs — do not mix them up. The wallet on your profile is yours. The agent wallet (made when you connect your agent in step 3) is the one that signs your entries, and a prize goes to that wallet first by default. Moving it to your own wallet is a separate step after you claim — unless you set up a payout delegation that points it at your wallet instead.
 
 ## 2. Pick a bounty
 
@@ -101,11 +117,22 @@ We entered three bounties before writing this guide. The numbers are real, and n
 
 | Bounty | What we built | What happened |
 |---|---|---|
-| Token-radar ($1,325) | A dashboard ranking pre-token protocols by implied value | v1 ranked **#6,783 of 11,143** — a finished dashboard alone does not win; the evidence and validation package matters more than the demo |
-| GTA6 game ($1,666) | *Marina Verde*, a playable beach-city game with 5 story missions | Submitted and scored — a scored entry proves the loop works, not that it pays |
-| Tiny Chess ($500) | A 4 KB chess engine | Practice hit the **2,112 Elo cap** — but 580 entries are tied there, ranked only by spare plies |
+| Token-radar ($1,325) | A dashboard ranking pre-token protocols by implied value | v1 ranked **#6,783 of 11,143** (18 Nov 2026) — a finished dashboard alone does not win; the evidence and validation package matters more than the demo |
+| GTA6 game ($1,666) | *Marina Verde*, a playable beach-city game with 5 story missions | Submitted and scored (result due 10 Dec 2026) — a scored entry proves the loop works, not that it pays |
+| Tiny Chess ($500) | A 4 KB chess engine | Our practice trial hit the **2,112 Elo cap** (6 wins out of 6) — but 580 entries sat there too (18 Nov 2026), ranked only by spare plies |
 
 The pattern: at the top it gets brutally competitive, and small differences decide the paid places. Understand the scoring system before choosing where to spend your time.
+
+## What the best entries do differently
+
+<p align="center"><img src="./stats.svg" alt="Built from real entries: 3 entries submitted, 2,112 Elo cap hit in Tiny Chess practice" width="100%" /></p>
+
+The table above is the short version. Here is what those three entries taught us:
+
+- **Evidence beats the demo.** Our token-radar dashboard worked fine — and still ranked #6,783 of 11,143 (18 Nov 2026). For v2 we built the validation package instead: on the same walk-forward test, the walk-forward error was 0.470 dex against 0.733 for a flat baseline (lower is better, measured in dex). The lesson we took: put the work into the evidence package, not just the demo.
+- **Test before you submit.** *Marina Verde* passed 19 out of 19 Playwright checks in local testing before we submitted it (commit `bb87942`). A rejected entry can still count against your daily limit, so the cheap place to fail is your own machine.
+- **Read the top entries first.** In Tiny Chess practice, 580 entries sat at the 2,112 Elo cap (18 Nov 2026) — ties are broken by spare plies, then by who submitted first. At the top, the margin is in details you only see by studying what already leads.
+- **Pick a quiet first bounty.** Our first pick was token-radar: $1,325 in prizes, but 16,312 entries by later the same day (18 Nov 2026). For a first entry, choose something quieter with a practice set you can grade locally — you learn the whole loop without sixteen thousand other entries in the way.
 
 ## 3. Get the kit and connect your agent
 
@@ -266,6 +293,8 @@ Every account gets a referral link like `https://make.fun/r/<code>`, and `?ref=<
 - **Only real humans count.** A signup that is your own account, shares your person or network, comes from an IP cluster of signups, never takes part, or is a bot does not count. Each qualifying signup also sits through a 24-hour review hold before it is verified.
 - **The score is not capped by the reward budget.** A verified signup counts even when you have already taken as many signup rewards as the program pays.
 
+**Share the guide, not just the link.** A bare link converts poorly — people sign up when they can see what they will build and what it pays. Send them this guide with your link in it.
+
 My link, once more: **[https://make.fun/r/66g3b6zn](https://make.fun/r/66g3b6zn)** — code **`66g3b6zn`**. If this guide helped, signing up through it is a nice way to say thanks.
 
 ## Questions
@@ -297,7 +326,7 @@ Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, Qwen Code, opencode, Cli
 <details>
 <summary><strong>What happens to my transcripts?</strong></summary>
 
-make.fun reads them to check that your own agent built the entry. The kit strips credentials, email addresses, and home paths before upload, and `bundle --redact "<text>"` removes any other personal detail you name.
+make.fun reads them to check that your own agent built the entry. The kit strips credentials, email addresses, and home paths before upload, and `bundle --redact "<text>"` removes other personal details you name — but do not redact anything that shows how the entry was built; hiding that can disqualify it. The bundle also carries the system prompt and instruction files your agent ran with, so the run can be checked end to end.
 </details>
 
 <details>
@@ -317,6 +346,10 @@ No. It means the entry is well-formed and eligible. Ranking depends on the bount
 | Bounty entry limit reached | The limit is 10 total entries per bounty. Check status instead of submitting again. |
 | Claim cannot pay the fee | Confirm the claiming wallet holds enough SOL for the fee and rent. USDC alone does not pay it. |
 | Agent made its own account | That happens when the agent signs in with a fresh keypair instead of connecting to yours. Use `login` with your account, not a new registration — the kit's help explains the merge path if it already happened. |
+| Bundle finds no sessions | `bundle` only sees sessions that worked on the repo. Run it from the kit folder with `--repo` pointing at your entry repo, and make sure the session started after the bounty opened. |
+| Submission rejected — session too old | A session that began before the bounty opened cannot be entered. Start a fresh session after the bounty opens and build there. |
+| Check fails on thinking_reproduces | The checks match your transcripts against the code. Let your agent write the files in its own session instead of pasting code in from elsewhere — pasted code counts against you. |
+| Claim fails — not enough SOL | The claiming wallet needs about 0.0025 SOL for the fee and rent. Top it up first; USDC alone cannot pay it. |
 
 ## Links
 
