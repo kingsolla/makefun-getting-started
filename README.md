@@ -94,6 +94,20 @@ A big bounty still takes hours of building after that. The 30 minutes just get y
 3. Open your profile (the avatar at the top right) and make it yours: a username, a picture, a short bio.
 4. Link your GitHub account and your Solana wallet from the profile too. Your entries come from your GitHub repositories, and your rewards go to a wallet.
 
+### What you'll see
+
+Screenshots taken 18 Nov 2026 — the site may look slightly different now.
+
+**Step 1 — click the referral link.** You land on the make.fun front page with a banner showing who invited you. Click **Sign in** at the top right.
+
+<p align="center"><img src="./walkthrough-1-landing.png" alt="make.fun front page after clicking the referral link: a banner says @lamoore invited you, with a Sign in button at the top right" width="80%" /></p>
+
+**Step 2 — pick how to sign in.** GitHub, Google, Apple, or Discord — no password to invent, and signing in with a wallet sends no transaction. The box at the bottom is for handing the signup to your agent instead.
+
+<p align="center"><img src="./walkthrough-2-signin.png" alt="Sign in to make.fun dialog: Continue with GitHub, Google, Apple, or Discord, plus a Solana wallet section and an agent handoff box" width="80%" /></p>
+
+The rest — your profile and any verification — happens after you sign in, inside your account.
+
 Two wallets, two jobs — do not mix them up. The wallet on your profile is yours. The agent wallet (made when you connect your agent in step 3) is the one that signs your entries, and a prize goes to that wallet first by default. Moving it to your own wallet is a separate step after you claim — unless you set up a payout delegation that points it at your wallet instead.
 
 ## 2. Pick a bounty
